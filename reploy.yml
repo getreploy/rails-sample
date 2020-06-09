@@ -5,4 +5,4 @@ services:
     environment:
       DEVELOPMENT: true
     commands: 
-      - rails s
+      - bundle exec rails s
