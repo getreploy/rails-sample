@@ -6,4 +6,5 @@ services:
       DEVELOPMENT: true
     commands: 
       - bundle install
+      - yarn --verify-tree
       - bundle exec rails s
