@@ -5,6 +5,7 @@ services:
     environment:
       DEVELOPMENT: true
     commands: 
-      - bundle install
+      - bundle package
+      - bundle install --local
       - yarn --verify-tree
       - bundle exec rails s
