@@ -5,6 +5,7 @@ services:
     environment:
       DEVELOPMENT: true
     commands: 
+      - cat Gemfile
       - bundle install
       - bundle exec rails webpacker:install
       - bundle exec rails s
