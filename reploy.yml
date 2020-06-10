@@ -6,5 +6,4 @@ services:
       DEVELOPMENT: true
     commands: 
       - bundle install --path=cache
-      - yarn --verify-tree
       - bundle exec rails s
