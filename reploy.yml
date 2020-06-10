@@ -6,4 +6,5 @@ services:
       DEVELOPMENT: true
     commands: 
       - bundle install --path=cache
+      - bundle exec rails webpacker:install
       - bundle exec rails s
