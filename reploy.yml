@@ -6,6 +6,7 @@ services:
       DEVELOPMENT: true
     commands: 
       - cat Gemfile
+      - pwd
       - bundle install
       - bundle exec rails webpacker:install
       - bundle exec rails s
