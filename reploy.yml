@@ -1,0 +1,12 @@
+services:
+  rails:
+    port: 3000
+    image: reploy/ruby:2.5
+    environment:
+      DEVELOPMENT: true
+    commands: 
+      - cat Gemfile
+      - pwd
+      - bundle install
+      - bundle exec rails webpacker:install
+      - bundle exec rails s
