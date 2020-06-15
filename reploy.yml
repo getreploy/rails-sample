@@ -10,4 +10,4 @@ services:
       - bundle install
       - yarn --verify-tree
       - bundle exec rails webpacker:install
-      - bundle exec rails s
+      - bundle exec rails s -b 0.0.0.0
