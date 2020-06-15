@@ -1,7 +1,7 @@
 services:
   rails:
     port: 3000
-    image: reploy/ruby:2.5.0
+    image: reploy/ruby:2.5.0v2
     environment:
       DEVELOPMENT: true
     commands:
