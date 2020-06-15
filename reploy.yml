@@ -7,7 +7,7 @@ services:
     commands:
       - cat Gemfile
       - pwd
-      - bundle install
+      - bundle install --path=cache
       - yarn --verify-tree
       - bundle exec rails webpacker:install
       - bundle exec rails s -b 0.0.0.0
