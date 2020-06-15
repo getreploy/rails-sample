@@ -5,6 +5,7 @@ services:
     environment:
       DEVELOPMENT: true
     commands:
+      - bundle update
       - bundle install --path=cache
       - yarn --verify-tree
       - bundle exec rails webpacker:install
@@ -16,6 +17,7 @@ services:
     environment:
       DEVELOPMENT: true
     commands:
+      - bundle update
       - bundle install --path=cache
       - yarn --verify-tree
       - bundle exec rails webpacker:install
