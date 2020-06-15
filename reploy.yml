@@ -11,3 +11,14 @@ services:
       - yarn --verify-tree
       - bundle exec rails webpacker:install
       - bundle exec rails s -b 0.0.0.0
+  sidekiq:
+    port: 5000
+    image: reploy/ruby:2.5.0v5
+    environment:
+      DEVELOPMENT: true
+    commands:
+      - cat Gemfile
+      - bundle install --path=cache
+      - yarn --verify-tree
+      - bundle exec rails webpacker:install
+      - bundle exec sidekiq
