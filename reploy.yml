@@ -4,7 +4,7 @@ services:
     image: reploy/ruby:2.5.0
     environment:
       DEVELOPMENT: true
-    commands: 
+    commands:
       - cat Gemfile
       - pwd
       - bundle install
