@@ -1,7 +1,7 @@
 services:
   rails:
     port: 3000
-    image: reploy/ruby:2.5.0v5
+    image: reploy/ruby:2.4.3
     environment:
       DEVELOPMENT: true
     commands:
@@ -12,7 +12,7 @@ services:
   sidekiq:
     do-not-expose: true
     port: 5000
-    image: reploy/ruby:2.5.0v5
+    image: reploy/ruby:2.4.3
     environment:
       DEVELOPMENT: true
     commands:
