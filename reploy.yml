@@ -8,5 +8,6 @@ services:
       - cat Gemfile
       - pwd
       - bundle install
+      - yarn --verify-tree
       - bundle exec rails webpacker:install
       - bundle exec rails s
