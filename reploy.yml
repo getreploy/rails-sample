@@ -1,0 +1,28 @@
+services:
+  rails:
+    port: 3000
+    image: reploy/ruby:2.4.3
+    environment:
+      DEVELOPMENT: true
+    commands:
+      - bundle update
+      - bundle install --path=cache
+      - yarn --verify-tree
+      - bundle exec rails webpacker:install
+      - bundle exec rails s -b 0.0.0.0
+  sidekiq:
+    do-not-expose: true
+    port: 5000
+    image: reploy/ruby:2.4.3
+    environment:
+      DEVELOPMENT: true
+    commands:
+      - bundle update
+      - bundle install --path=cache
+      - yarn --verify-tree
+      - bundle exec rails webpacker:install
+      - bundle exec sidekiq
+  redis:
+    do-not-expose: true
+    port: 6379
+    runtime: redis
