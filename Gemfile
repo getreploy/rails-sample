@@ -1,54 +1,101 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.0'
+ruby "2.7.1"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
-# Use Puma as the app server
-gem 'puma', '~> 4.1'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'redis-rails'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'rack-cors'
+#gem 'rack-attack'
 
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem "font-awesome-rails"
+gem 'flag-icons-rails'
+
+gem 'http-accept'
+
+#for html to pdf
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-heroku', '2.12.5.0'
+
+gem 'pg_search'
+gem 'devise-i18n'
+gem 'rails-i18n'
+gem 'rails',
+  git:"https://github.com/rails/rails.git",
+  branch: "5-2-stable"
+gem 'actionmailer'
+gem 'sassc'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jbuilder'
+gem 'devise',
+  git:'https://github.com/heartcombo/devise.git'
+gem 'devise-security'
+gem "omniauth-google-oauth2"
+gem 'omniauth-facebook'
+gem 'haml-rails'
+gem 'pagy'
+gem 'pg'
+gem 'sendgrid'
+gem 'bootstrap', '~> 4.3.1'
+gem 'puma'
+gem 'puma-heroku'
+gem 'high_voltage'
+gem 'kramdown' # For markdown in haml
+gem 'autoprefixer-rails'
+gem 'sidekiq'
+gem 'sidekiq-middleware'
+gem 'mime-types'
+gem 'sendgrid-actionmailer'
+group :development do
+  gem 'html2haml'
+  gem 'web-console'
+  gem 'byebug'
+  gem "letter_opener"
+  gem "derailed"
+  gem 'listen'
+  gem 'pry'
+  gem 'pry-byebug'
+end
+#group :production do
+#    gem 'rack-timeout'
+#end
+#
+#for sample data
+gem 'factory_bot_rails'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'minitest-rails'
+  gem 'rubocop-rails'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
-
-group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'capybara'
+  gem 'database_cleaner', '~> 1.6.1'
+  gem 'email_spec'
+  gem 'rails-controller-testing'
 end
+gem 'unf'
+gem 'newrelic_rpm'
+#gem 'http_accept_language', '~> 2.1'
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Custom Activemerchant fork with Neo Gateway
+gem 'activemerchant',
+  git: 'https://github.com/ibarria0/active_merchant.git',
+  branch: 'add_neo_gateway'
+
+gem 'staccato-rails'
+gem 'sitemap_generator',
+  git: 'https://github.com/kjvarga/sitemap_generator.git'
+
+gem 'mail-x_smtpapi'
+gem 'aws-sdk-s3'
+gem 'rubyzip'
+gem 'httparty'
+gem 'simplebar-rails'
+gem 'popper_js', '~> 1.14.5'
+
+gem 'devise_invitable', '~> 2.0.0'
+gem 'rdstation-ruby-client'
