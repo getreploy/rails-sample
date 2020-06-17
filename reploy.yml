@@ -1,0 +1,26 @@
+services:
+  rails:
+    port: 3000
+    image: reploy/ruby:2.5.0v5
+    environment:
+      DEVELOPMENT: true
+    build:
+      - bundle install --path=cache
+      - yarn --verify-tree
+    serve:
+      - bundle exec rails s -b 0.0.0.0
+  sidekiq:
+    do-not-expose: true
+    port: 5000
+    image: reploy/ruby:2.5.0v5
+    environment:
+      DEVELOPMENT: true
+    build:
+      - bundle install --path=cache
+      - yarn --verify-tree
+    serve:
+      - bundle exec sidekiq
+  redis:
+    do-not-expose: true
+    port: 6379
+    runtime: redis
